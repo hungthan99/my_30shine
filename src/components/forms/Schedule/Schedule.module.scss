@@ -1,0 +1,55 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--primary-color);
+    width: 566px;
+    height: 122px;
+    margin-top: 24px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.title,
+.description {
+    color: var(--white-color);
+    font-size: 1.8rem;
+}
+
+.title {
+    padding-left: 36px;
+}
+
+.description {
+    padding-left: 34px;
+}
+
+.form-schedule {
+    margin: 4px 32px 0 32px;
+    display: flex;
+    align-items: center;
+}
+
+.phone-input {
+    padding: 10px;
+    flex-grow: 1;
+    font-size: 1.6rem;
+    outline: none;
+    caret-color: var(--primary-color);
+}
+
+.phone-input,
+.btn-schedule {
+    border-radius: 6px;
+    border: none;
+}
+
+.btn-schedule {
+    height: 100%;
+    margin-left: 10px;
+    background: linear-gradient(270deg, #cfa462, #f5e2c0 25.22%, #faeacd 53.97%, #ca9e5a 96.84%);
+    padding: 0 8px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+}

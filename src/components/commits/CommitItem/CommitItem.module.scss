@@ -1,0 +1,29 @@
+.wrapper {
+    margin-top: 18px;
+    width: 294px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #d9d9d9;
+}
+
+.days,
+.unit {
+    color: var(--primary-color);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.days {
+    font-size: 4.8rem;
+}
+
+.unit {
+    font-size: 2.4rem;
+}
+
+.slogan {
+    font-size: 1.6rem;
+    color: #666;
+}

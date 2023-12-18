@@ -1,0 +1,16 @@
+.wrapper {
+    width: 924px;
+    margin-top: 32px;
+    position: relative;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-left: -10px;
+}
+
+.item {
+    margin: 0 10px;
+}

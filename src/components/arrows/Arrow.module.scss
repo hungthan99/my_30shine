@@ -1,0 +1,14 @@
+.left,
+.right {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}

@@ -1,0 +1,59 @@
+.wrapper {
+    margin-top: 18px;
+    width: 216px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.image {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+}
+
+.others,
+.name,
+.quantity {
+    position: absolute;
+}
+
+.others {
+    display: flex;
+    top: 80px;
+    left: 80px;
+}
+
+.item {
+    width: 12px;
+    height: 12px;
+    background-color: #c3ccde;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.name,
+.quantity {
+    width: 100%;
+    text-align: center;
+    color: var(--white-color);
+}
+
+.name {
+    top: 94px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.quantity {
+    top: 118px;
+    font-size: 1.6rem;
+}

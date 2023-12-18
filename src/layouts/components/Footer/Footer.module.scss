@@ -1,0 +1,73 @@
+.contact,
+.license {
+    width: 100%;
+}
+
+.contact {
+    height: 277px;
+    background-color: var(--primary-color);
+    display: flex;
+    padding-top: 36px;
+    padding-left: 208px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    margin: 0 24px;
+
+    .item {
+        color: var(--white-color);
+        margin-bottom: 16px;
+        cursor: pointer;
+
+        &:hover {
+            color: #fecc33;
+        }
+    }
+
+    .disable {
+        cursor: auto;
+        &:hover {
+            color: var(--white-color);
+        }
+    }
+
+    .medium {
+        font-weight: 500;
+    }
+
+    .bold {
+        font-weight: 700;
+    }
+}
+
+.btns {
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.logos {
+    display: flex;
+    margin-top: 4px;
+
+    .item {
+        margin-right: 16px;
+        cursor: pointer;
+    }
+}
+
+.license {
+    height: 76px;
+    background-color: #ececec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.address {
+    color: #666;
+    font-size: 1.6rem;
+}

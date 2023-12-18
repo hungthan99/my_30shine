@@ -1,0 +1,16 @@
+.navigation-item {
+    cursor: pointer;
+    margin: 0 16px;
+    color: #262626;
+    font-weight: 500;
+
+    &:hover {
+        color: var(--primary-color);
+        border-bottom: 2px solid #a0c9eb;
+    }
+}
+
+.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid #a0c9eb;
+}
