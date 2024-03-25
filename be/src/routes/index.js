@@ -1,0 +1,33 @@
+const serviceRouter = require('./services')
+const serviceItemRouter = require('./serviceItems')
+const employeeRouter = require('./employees')
+const employeeItemRouter = require('./employeeItems')
+const endowRouter = require('./endows')
+const endowItemRouter = require('./endowItems')
+const commitRouter = require('./commits')
+const commitItemRouter = require('./commitItems')
+const provinceRouter = require('./provinces')
+const provinceItemRouter = require('./provinceItems')
+const spaceRouter = require('./spaces')
+const spaceItemRouter = require('./spaceItems')
+const storeRouter = require('./stores')
+const storeItemRouter = require('./storeItems')
+
+function route(app) {
+    app.use('/services', serviceRouter)
+    app.use('/service-items', serviceItemRouter)
+    app.use('/employees', employeeRouter)
+    app.use('/employee-items', employeeItemRouter)
+    app.use('/endows', endowRouter)
+    app.use('/endow-items', endowItemRouter)
+    app.use('/commits', commitRouter)
+    app.use('/commit-items', commitItemRouter)
+    app.use('/provinces', provinceRouter)
+    app.use('/province-items', provinceItemRouter)
+    app.use('/spaces', spaceRouter)
+    app.use('/space-items', spaceItemRouter)
+    app.use('/stores', storeRouter)
+    app.use('/store-items', storeItemRouter)
+}
+
+module.exports = route
