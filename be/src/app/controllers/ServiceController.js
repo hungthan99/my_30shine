@@ -1,9 +1,10 @@
 const Service = require('../models/Service')
+const ServiceItem = require('../models/ServiceItem')
 
 class ServiceController {
     // [GET] /services
     showAll(req, res, next) {
-        Service.find({})
+        Service.find({}).populate('items')
             .then((services) => res.status(200).json(services))
             .catch(next)
     }

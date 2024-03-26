@@ -1,4 +1,5 @@
 const EndowItem = require('../models/EndowItem')
+const Endow = require('../models/Endow')
 
 class EndowItemController {
     // [GET] /endow-items
@@ -20,13 +21,15 @@ class EndowItemController {
         const endowItem = new EndowItem(req.body)
         endowItem
             .save()
-            .then(() =>
+            .then(async (endowItem) => {
+                const endow = await Endow.findById(endowItem.endow)
+                await endow.updateOne({$push: {items: endowItem._id}})
                 res.status(200).json({
                     status: 200,
                     message: "Create endow item successfully!",
                     payload: null,
                 })
-            )
+            })
             .catch(next)
     }
 

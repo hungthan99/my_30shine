@@ -3,7 +3,7 @@ const Employee = require('../models/Employee')
 class EmployeeController {
     // [GET] /employees
     showAll(req, res, next) {
-        Employee.find({})
+        Employee.find({}).populate('items')
             .then((employees) => res.status(200).json(employees))
             .catch(next)
     }

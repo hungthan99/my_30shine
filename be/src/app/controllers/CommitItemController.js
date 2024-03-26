@@ -1,4 +1,5 @@
 const CommitItem = require('../models/CommitItem')
+const Commit = require('../models/Commit')
 
 class CommitItemController {
     // [GET] /commit-items
@@ -20,13 +21,15 @@ class CommitItemController {
         const commitItem = new CommitItem(req.body)
         commitItem
             .save()
-            .then(() =>
+            .then(async (commitItem) => {
+                const commit = await Commit.findById(commitItem.commit)
+                await commit.updateOne({$push: {items: commitItem._id}})
                 res.status(200).json({
                     status: 200,
                     message: "Create commit item successfully!",
                     payload: null,
                 })
-            )
+            })
             .catch(next)
     }
 

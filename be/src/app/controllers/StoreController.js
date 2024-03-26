@@ -3,7 +3,7 @@ const Store = require('../models/Store')
 class StoreController {
     // [GET] /stores
     showAll(req, res, next) {
-        Store.find({})
+        Store.find({}).populate('items')
             .then((stores) => res.status(200).json(stores))
             .catch(next)
     }

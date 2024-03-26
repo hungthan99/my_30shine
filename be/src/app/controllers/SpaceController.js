@@ -3,7 +3,7 @@ const Space = require('../models/Space')
 class SpaceController {
     // [GET] /spaces
     showAll(req, res, next) {
-        Space.find({})
+        Space.find({}).populate('items')
             .then((spaces) => res.status(200).json(spaces))
             .catch(next)
     }

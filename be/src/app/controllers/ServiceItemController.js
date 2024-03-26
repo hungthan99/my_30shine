@@ -1,4 +1,5 @@
 const ServiceItem = require('../models/ServiceItem')
+const Service = require('../models/Service')
 
 class ServiceItemController {
     // [GET] /service-items
@@ -20,13 +21,15 @@ class ServiceItemController {
         const serviceItem = new ServiceItem(req.body)
         serviceItem
             .save()
-            .then(() =>
+            .then(async (serviceItem) => {
+                const service = await Service.findById(serviceItem.service)
+                await service.updateOne({$push: {items: serviceItem._id}})
                 res.status(200).json({
                     status: 200,
                     message: "Create service item successfully!",
                     payload: null,
                 })
-            )
+            })
             .catch(next)
     }
 

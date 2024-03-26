@@ -1,4 +1,5 @@
 const StoreItem = require('../models/StoreItem')
+const Store = require('../models/Store')
 
 class StoreItemController {
     // [GET] /store-items
@@ -20,13 +21,15 @@ class StoreItemController {
         const storeItem = new StoreItem(req.body)
         storeItem
             .save()
-            .then(() =>
+            .then(async (storeItem) => {
+                const store = await Store.findById(storeItem.store)
+                await store.updateOne({$push: {items: storeItem._id}})
                 res.status(200).json({
                     status: 200,
                     message: "Create store item successfully!",
                     payload: null,
                 })
-            )
+            })
             .catch(next)
     }
 

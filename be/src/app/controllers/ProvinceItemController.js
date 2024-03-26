@@ -1,4 +1,5 @@
 const ProvinceItem = require('../models/ProvinceItem')
+const Province = require('../models/Province')
 
 class ProvinceItemController {
     // [GET] /province-items
@@ -20,13 +21,15 @@ class ProvinceItemController {
         const provinceItem = new ProvinceItem(req.body)
         provinceItem
             .save()
-            .then(() =>
+            .then(async (provinceItem) => {
+                const province = await Province.findById(provinceItem.province)
+                await province.updateOne({$push: {items: provinceItem._id}})
                 res.status(200).json({
                     status: 200,
                     message: "Create province item successfully!",
                     payload: null,
                 })
-            )
+            })
             .catch(next)
     }
 

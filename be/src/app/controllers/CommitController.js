@@ -3,7 +3,7 @@ const Commit = require('../models/Commit')
 class CommitController {
     // [GET] /commits
     showAll(req, res, next) {
-        Commit.find({})
+        Commit.find({}).populate('items')
             .then((commits) => res.status(200).json(commits))
             .catch(next)
     }

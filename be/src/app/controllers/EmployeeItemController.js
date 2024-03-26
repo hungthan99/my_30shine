@@ -1,4 +1,5 @@
 const EmployeeItem = require('../models/EmployeeItem')
+const Employee = require('../models/Employee')
 
 class EmployeeItemController {
     // [GET] /employee-items
@@ -20,13 +21,15 @@ class EmployeeItemController {
         const employeeItem = new EmployeeItem(req.body)
         employeeItem
             .save()
-            .then(() =>
+            .then(async (employeeItem) => {
+                const employee = await Employee.findById(employeeItem.employee)
+                await employee.updateOne({$push: {items: employeeItem._id}})
                 res.status(200).json({
                     status: 200,
                     message: "Create employee item successfully!",
                     payload: null,
                 })
-            )
+            })
             .catch(next)
     }
 

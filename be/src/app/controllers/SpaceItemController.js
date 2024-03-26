@@ -1,4 +1,5 @@
 const SpaceItem = require('../models/SpaceItem')
+const Space = require('../models/Space')
 
 class SpaceItemController {
     // [GET] /space-items
@@ -20,13 +21,15 @@ class SpaceItemController {
         const spaceItem = new SpaceItem(req.body)
         spaceItem
             .save()
-            .then(() =>
+            .then(async (spaceItem) => {
+                const space = await Space.findById(spaceItem.space)
+                await space.updateOne({$push: {items: spaceItem._id}})
                 res.status(200).json({
                     status: 200,
                     message: "Create space item successfully!",
                     payload: null,
                 })
-            )
+            })
             .catch(next)
     }
 

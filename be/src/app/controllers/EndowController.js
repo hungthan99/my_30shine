@@ -3,7 +3,7 @@ const Endow = require('../models/Endow')
 class EndowController {
     // [GET] /endows
     showAll(req, res, next) {
-        Endow.find({})
+        Endow.find({}).populate('items')
             .then((endows) => res.status(200).json(endows))
             .catch(next)
     }

@@ -3,7 +3,7 @@ const Province = require('../models/Province')
 class ProvinceController {
     // [GET] /provinces
     showAll(req, res, next) {
-        Province.find({})
+        Province.find({}).populate('items')
             .then((provinces) => res.status(200).json(provinces))
             .catch(next)
     }
