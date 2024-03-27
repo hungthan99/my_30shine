@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 import images from '~/assets/images';
 import EmployeeList from '~/components/employees/EmployeeList';
@@ -88,25 +88,23 @@ function Home() {
             <img className={clsx(styles.banner)} src={images.banner} alt="Banner" />
             <Schedule />
             {services.map((service, index) => (
-                <>
-                    <ServiceList 
-                        key={index} 
+                <Fragment key={index}>
+                    <ServiceList
                         items={service.items} 
                         label={service.label} 
                     />
                     <div className={clsx(styles['mt-24'])}></div>
-                </>
+                </Fragment>
             ))}
             {employees.map((employee, index) => (
-                <>
+                <Fragment key={index}>
                     <EmployeeList 
-                        key={index} 
                         items={employee.items} 
                         label={employee.label} 
                         description={employee.description} 
                     />
                     <div className={clsx(styles['mt-24'])}></div>
-                </>
+                </Fragment>
             ))}
             <div className={clsx(styles['mt-24'])}></div>
             {stores.map((store, index) => (
@@ -120,15 +118,14 @@ function Home() {
                 />
             ))}
             {endows.map((endow, index) => (
-                <>
-                    <EndowList 
-                        key={index} 
+                <Fragment key={index}>
+                    <EndowList
                         label={endow.label} 
                         description={endow.description} 
                         items={endow.items}
                     />
                     <div className={clsx(styles['mt-48'])}></div>
-                </>
+                </Fragment>
             ))}
             <div className={clsx(styles['mt-ne-24'])}></div>
             {spaces.map((space, index) => (
