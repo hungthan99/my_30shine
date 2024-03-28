@@ -85,7 +85,7 @@ function Home() {
       }, []);
     return (
         <div className={clsx(styles.wrapper)}>
-            <img className={clsx(styles.banner)} src={images.banner} alt="Banner" />
+            <img className={clsx(styles.banner)} src={images.bannerHome} alt="Banner" />
             <Schedule />
             {services.map((service, index) => (
                 <Fragment key={index}>

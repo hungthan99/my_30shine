@@ -1,6 +1,7 @@
 const images = {
     logo: require('~/assets/images/logo.png'),
-    banner: require('~/assets/images/banner.jpeg'),
+    bannerHome: require('~/assets/images/banner_home.jpeg'),
+    bannerAbout: require('~/assets/images/banner_about.jpeg'),
     logoFormMessenger: require('~/assets/images/logo_form_messenger.jpeg'),
     arrowUp: require('~/assets/images/arrow_up.svg').default,
     arrowRight: require('~/assets/images/arrow_right.svg').default,
