@@ -1,0 +1,23 @@
+.wrapper {
+    margin-top: 42px;
+    width: 1200px;
+}
+
+.list-items {
+    display: flex;
+    justify-content: space-between;
+    margin: 32px 0 0 -8px;
+    overflow: hidden;
+}
+
+.item {
+    margin: 0 8px;
+}
+
+.fix {
+    padding-bottom: 16px;
+}
+
+.mb-ne-16 {
+    margin-bottom: -16px;
+}

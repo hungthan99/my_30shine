@@ -1,0 +1,31 @@
+.wrapper {
+    margin-top: 64px;
+    width: 1200px;
+}
+
+.desc {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.images {
+    margin-top: 42px;
+}
+
+.images,
+.image-asides {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-asides {
+    flex-direction: column;
+}
+
+.image {
+    border-radius: 15px;
+    box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
