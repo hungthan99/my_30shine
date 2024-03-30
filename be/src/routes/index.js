@@ -18,6 +18,8 @@ const visionRouter = require('./about/visions')
 const visionItemRouter = require('./about/visionItems')
 const postRouter = require('./about/posts')
 const postItemRouter = require('./about/postItems')
+const cityRouter = require('./system-salon/cities')
+const districtItemRouter = require('./system-salon/districts')
 
 function route(app) {
     app.use('/services', serviceRouter)
@@ -40,6 +42,8 @@ function route(app) {
     app.use('/vision-items', visionItemRouter)
     app.use('/posts', postRouter)
     app.use('/post-items', postItemRouter)
+    app.use('/cities', cityRouter)
+    app.use('/districts', districtItemRouter)
 }
 
 module.exports = route

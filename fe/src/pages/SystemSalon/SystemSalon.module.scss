@@ -38,12 +38,118 @@
 .container {
     width: 1425px;
     background-color: rgb(238, 238, 238);
-    min-height: 1000px;
+    margin-top: -8px;
 }
 
 .content {
-    width: 1200px;
+    width: 1175px;
     margin: auto;
     background-color: var(--white-color);
-    min-height: 1000px;
+}
+
+.content-body {
+    padding: 42px 16px;
+}
+
+.content-group-btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.location-btn {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    font-size: 1.8rem;
+    padding: 11px 129px;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}
+
+.location-title {
+    margin-left: 16px;
+}
+
+.location-select {
+    font-size: 1.6rem;
+    background-color: var(--white-color);
+    border: 1.5px solid #222;
+    border-radius: 4px;
+    min-width: 320px;
+    padding: 0 16px;
+    cursor: pointer;
+}
+
+.location-select-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cities-form {
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+    max-height: 250px;
+    overflow-y: auto;
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
+}
+
+.city-item {
+    list-style: none;
+    text-align: left;
+    padding: 16px;
+
+    &:hover {
+        background-color: rgb(238, 238, 238);
+    }
+}
+
+.location-select-icon {
+    color: #bfbfbf;
+}
+
+.content-map {
+    display: flex;
+}
+
+.list-province {
+    width: 460px;
+    height: 675px;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    overflow-y: auto;
+    margin-top: 24px;
+}
+
+.province-item {
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 24px 36px;
+    border-bottom: 1px solid #e8e8e8;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #e8e8e8;
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.display-map {
+    width: 460px;
+    height: 675px;
+    margin: 36px 0 0 120px;
 }
