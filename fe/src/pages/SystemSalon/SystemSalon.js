@@ -9,7 +9,9 @@ import { useEffect, useState } from "react";
 
 function SystemSalon() {
     const [cities, setCities] = useState([])
+    const [city, setCity] = useState('Tỉnh/Thành phố')
     const [districts, setDistricts] = useState([])
+    const [district, setDistrict] = useState('Quận huyện')
     const [showCitiesForm, setShowCitiesForm] = useState(false)
     const [showDistrictsForm, setShowDistrictsForm] = useState(false)
     useEffect(() => {
@@ -22,6 +24,12 @@ function SystemSalon() {
             .then(res => res.json())
             .then(data => setDistricts(data))
     }, [])
+    useEffect(() => {
+        setShowCitiesForm(false)
+    }, [city])
+    useEffect(() => {
+        setShowDistrictsForm(false)
+    }, [district])
     return (
         <div className={clsx(styles.wrapper)}>
             <div className={clsx(styles.banner)}>
@@ -47,13 +55,19 @@ function SystemSalon() {
                                     render={(attrs) => (
                                         <div className={clsx(styles['cities-form'])} tabIndex="-1" {...attrs}>
                                             {cities.map((city, index) => (
-                                                <div key={index} className={clsx(styles['city-item'])}>{city.name} ({city.number})</div>
+                                                <div 
+                                                    key={index} 
+                                                    className={clsx(styles['city-item'])}
+                                                    onClick={() => setCity(city.name + ' (' + city.number + ')')}
+                                                >
+                                                    {city.name} ({city.number})
+                                                </div>
                                             ))}
                                         </div>
                                     )}
                                 >
                                     <div className={styles['location-select-btn']}>
-                                        Tỉnh/Thành phố
+                                        {city}
                                         <FontAwesomeIcon className={styles['location-select-icon']} icon={faChevronDown} />
                                     </div>
                                 </HeadlessTippy>
@@ -68,13 +82,19 @@ function SystemSalon() {
                                     render={(attrs) => (
                                         <div className={clsx(styles['cities-form'])} tabIndex="-1" {...attrs}>
                                             {districts.map((district, index) => (
-                                                <div key={index} className={clsx(styles['city-item'])}>{district.name} ({district.number})</div>
+                                                <div 
+                                                    key={index} 
+                                                    className={clsx(styles['city-item'])}
+                                                    onClick={() => setDistrict(district.name + ' (' + district.number + ')')}
+                                                >
+                                                    {district.name} ({district.number})
+                                                </div>
                                             ))}
                                         </div>
                                     )}
                                 >
                                     <div className={styles['location-select-btn']}>
-                                        Quận huyện
+                                        {district}
                                         <FontAwesomeIcon className={styles['location-select-icon']} icon={faChevronDown} />
                                     </div>
                                 </HeadlessTippy>
