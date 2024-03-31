@@ -12,6 +12,9 @@ const images = {
     phone: require('~/assets/images/phone.svg').default,
     messenger: require('~/assets/images/messenger.svg').default,
     checkFormMessenger: require('~/assets/images/check_form_messenger.svg').default,
+    silverCrown: require('~/assets/images/silver_crown.svg').default,
+    goldCrown: require('~/assets/images/gold_crown.svg').default,
+    diamondCrown: require('~/assets/images/diamond_crown.svg').default,
 };
 
 export default images;

@@ -1,0 +1,37 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 930px;
+    margin-top: 32px;
+}
+
+.label {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 16px;
+    margin-top: 48px;
+}
+
+.label,
+.type {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.category {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+    text-align: center;
+}
+
+.accumulate,
+.price {
+    font-size: 1.6rem;
+    color: #666;
+}
+
+.price {
+    font-weight: bold;
+}
+

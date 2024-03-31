@@ -1,0 +1,38 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 930px;
+}
+
+.info {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 16px;
+    background-color: #dfdfdf;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.silver,
+.gold,
+.diamond {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.silver {
+    background-color: #eaf0fd;
+}
+
+.gold {
+    background-color: #fffbf0;
+}
+
+.diamond {
+    background: linear-gradient(90deg, rgb(225, 225, 225) -11.22%, rgb(198, 198, 198) -11.21%, rgb(232, 232, 232) 29.91%, rgb(232, 232, 232) 54.24%, rgb(215, 215, 215) 100%);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

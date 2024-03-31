@@ -1,0 +1,29 @@
+.wrapper {
+    width: 930px;
+    margin-top: 48px;
+}
+
+.info {
+    text-align: center;
+    padding: 0 16px;
+}
+
+.title,
+.description {
+    color: var(--primary-color);
+}
+
+.title {
+    font-size: 2.6rem;
+}
+
+.description {
+    font-size: 1.6rem;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 32px;
+}

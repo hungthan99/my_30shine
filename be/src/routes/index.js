@@ -20,6 +20,10 @@ const postRouter = require('./about/posts')
 const postItemRouter = require('./about/postItems')
 const cityRouter = require('./system-salon/cities')
 const districtItemRouter = require('./system-salon/districts')
+const memberRouter = require('./shine-member/members')
+const memberItemRouter = require('./shine-member/memberItems')
+const benefitRouter = require('./shine-member/benefits')
+const benefitItemRouter = require('./shine-member/benefitItems')
 
 function route(app) {
     app.use('/services', serviceRouter)
@@ -44,6 +48,10 @@ function route(app) {
     app.use('/post-items', postItemRouter)
     app.use('/cities', cityRouter)
     app.use('/districts', districtItemRouter)
+    app.use('/members', memberRouter)
+    app.use('/member-items', memberItemRouter)
+    app.use('/benefits', benefitRouter)
+    app.use('/benefit-items', benefitItemRouter)
 }
 
 module.exports = route
