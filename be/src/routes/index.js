@@ -24,6 +24,7 @@ const memberRouter = require('./shine-member/members')
 const memberItemRouter = require('./shine-member/memberItems')
 const benefitRouter = require('./shine-member/benefits')
 const benefitItemRouter = require('./shine-member/benefitItems')
+const questionRouter = require('./shine-member/questions')
 
 function route(app) {
     app.use('/services', serviceRouter)
@@ -52,6 +53,7 @@ function route(app) {
     app.use('/member-items', memberItemRouter)
     app.use('/benefits', benefitRouter)
     app.use('/benefit-items', benefitItemRouter)
+    app.use('/questions', questionRouter)
 }
 
 module.exports = route

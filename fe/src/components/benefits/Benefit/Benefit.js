@@ -4,10 +4,10 @@ import BenefitItem from "../BenefitItem";
 
 import styles from './Benefit.module.scss'
 
-function Benefit({firstChild}) {
+function Benefit({label, firstChild, items}) {
     return (
         <div className={clsx(styles.wrapper)}>
-            <div className={clsx(styles.label)}>Ưu đãi - tiết kiệm</div>
+            <div className={clsx(styles.label)}>{label}</div>
             {
                 firstChild && 
                 <Fragment>
@@ -28,7 +28,19 @@ function Benefit({firstChild}) {
                     </div>
                 </Fragment>
             }
-            <BenefitItem />
+            {items.map((item, index) => (
+                <BenefitItem 
+                    key={index} 
+                    name={item.name} 
+                    desc={item.desc}    
+                    boldDesc={item.boldDesc}    
+                    lsDesc={item.lsDesc}    
+                    silver={item.silver}    
+                    gold={item.gold}   
+                    diamond={item.diamond}   
+                    items={item.items}
+                />
+            ))}
         </div>
     );
 }

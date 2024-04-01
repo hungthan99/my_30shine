@@ -1,0 +1,25 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 930px;
+    padding: 12px 0;
+    border-bottom: 1px solid #a0c9eb;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.name,
+.answer {
+    font-size: 1.8rem;
+}
+
+.name {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.answer {
+    color: #111;
+}
