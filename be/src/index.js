@@ -8,6 +8,7 @@ const route = require('./routes')
 
 const app = express();
 
+// permit call api in frontend
 app.use(cors());
 
 app.use(express.json());
